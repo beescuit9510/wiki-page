@@ -1,0 +1,40 @@
+get http://localhost:3000/posts
+?title=?
+
+X-Total-Count
+###
+
+get http://localhost:3000/posts
+?_start=0
+&_limit=2
+
+# ?_sort='createdAt'
+# &_order='DESC'
+
+
+### 
+# get http://localhost:3000/posts
+# ?_sort=createdAt
+# &_page=2
+# &_limit=2
+
+
+get http://localhost:3000/posts
+
+# &_page=1&_limit=2
+
+
+
+### 
+get http://localhost:3000/posts
+?id=1
+
+###
+
+post http://localhost:3000/posts/
+
+{
+  "title": "제목 입니다 (6)",
+  "content": "콘텐츠 입니다",
+  "createdAt":1706087123491
+}
