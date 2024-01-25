@@ -1,3 +1,25 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "e6f2",
+      "title": "test",
+      "content": "내용",
+      "dislpayContent": "내용",
+      "createdAt": 1706218844000
+    },
+    {
+      "id": "6116",
+      "title": "test1",
+      "content": "test",
+      "dislpayContent": "<a class='e6f2-test' href='/posts/e6f2' >test</a>",
+      "createdAt": 1706218853501
+    },
+    {
+      "id": "8d92",
+      "title": "test2",
+      "content": "test test1",
+      "dislpayContent": "<a class='e6f2-test' href='/posts/e6f2' >test</a> <a class='6116-test1' href='/posts/6116' >test1</a>",
+      "createdAt": 1706218862053
+    }
+  ]
 }

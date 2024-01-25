@@ -1,36 +1,17 @@
 get http://localhost:3000/posts
-?title=?
+?title=test
 
-X-Total-Count
 ###
-
 get http://localhost:3000/posts
-?_start=0
+?_sort=-createdAt
+&_page=2
 &_limit=2
-
-# ?_sort='createdAt'
-# &_order='DESC'
-
-
-### 
-# get http://localhost:3000/posts
-# ?_sort=createdAt
-# &_page=2
-# &_limit=2
-
-
-get http://localhost:3000/posts
-
-# &_page=1&_limit=2
-
-
 
 ### 
 get http://localhost:3000/posts
 ?id=1
 
 ###
-
 post http://localhost:3000/posts/
 
 {

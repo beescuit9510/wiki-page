@@ -13,21 +13,29 @@ const getUrls = async (data: string) => {
         .map((surfix) => (keyword += ' ' + surfix).trim())
     })
     .flatMap((v) => v)
-    .flatMap((keyword) =>
-      api.get(`/posts?title=${keyword}`).then((res) => res.data)
+    .map((keyword) =>
+      api
+        .get(`/posts?title=${keyword}`, {
+          params: {
+            _sort: 'id',
+          },
+        })
+        .then((res) => res.data)
     )
 
   const reses = await Promise.all(urls)
+
   return reses
     .flatMap((res) => res)
     .reduce(
       (p, v) =>
         p.replace(
-          v.title,
-          `<a style="text-decoration:underline;" href='/posts/${v.id}'>${v.title}<a>`
+          ` ${v.title} `,
+          ` <a class='${v.id}-${v.title}' href='/posts/${v.id}' >${v.title}</a> `
         ),
-      data
+      ` ${data} `
     )
+    .trim()
 }
 
 const api = axios.create({ baseURL: 'http://localhost:3000' })
@@ -41,7 +49,7 @@ export const request = {
     }),
 
   editPost: async (data: EditPost) =>
-    api.put(`/posts/${data.id}`, {
+    api.patch(`/posts/${data.id}`, {
       ...data,
       dislpayContent: await getUrls(data.content),
     }),

@@ -33,7 +33,7 @@ export default function EditPost({
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalHeader>Post</ModalHeader>
+          <ModalHeader>수정하기</ModalHeader>
           <MutatePost
             title={title}
             content={content}

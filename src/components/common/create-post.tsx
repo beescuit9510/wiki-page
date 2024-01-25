@@ -33,7 +33,7 @@ export default function CreatePost() {
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalHeader>Post</ModalHeader>
+          <ModalHeader>추가하기</ModalHeader>
           <MutatePost
             mutate={(post) => {
               mutate(post)
